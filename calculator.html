@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+</head>
+<body>
+  <h2>Simple Calculator</h2>
+  <input type="number" id="a" placeholder="First number">
+  <input type="number" id="b" placeholder="Second number">
+  <select id="op">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <button onclick="calculate()">Calculate</button>
+  <p id="result"></p>
+
+  <script>
+    function calculate() {
+      let x = parseFloat(document.getElementById("a").value);
+      let y = parseFloat(document.getElementById("b").value);
+      let op = document.getElementById("op").value;
+      let res;
+
+      switch(op) {
+        case "+": res = x + y; break;
+        case "-": res = x - y; break;
+        case "*": res = x * y; break;
+        case "/": res = y !== 0 ? x / y : "Infinity"; break;
+      }
+
+      document.getElementById("result").innerHTML = "Result = " + res;
+    }
+  </script>
+</body>
+</html>
